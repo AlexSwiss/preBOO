@@ -13,7 +13,6 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    game.load.image('tinystar', 'assets/images/star2.png');
     this.load.image('sky', 'asset/images/sky.png');
     this.load.image('star', 'asset/images/star.png');
     this.load.spritesheet('dude', 
@@ -26,9 +25,6 @@ function create ()
 {
     this.add.image(400, 300, 'sky');
     stars = this.add.sprite(700, 100, 'star');
-    stars1 = this.add.sprite(100, 300, 'star');
-    stars2 = this.add.sprite(500, 500, 'star');
-    stars3 = this.add.sprite(200, 700, 'star');
     player = this.add.sprite(100, 450, 'dude');
     cursors = this.input.keyboard.createCursorKeys();
 }
