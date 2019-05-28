@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1
+    maximum-scale=1, minimum-scale=1, user-scale=no" />
+    <title>PreBoo Puzzle</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.17.0/dist/phaser.js"></script>
+
+     <!-- Blockly Script Default -->
+     <script src="blockly_compressed.js"></script>
+     <script src="blocks_compressed.js"></script>
+     <script src="msg/js/en.js"></script>
+     <script src="javascript_compressed.js"></script>
+
+     <!-- Customize Blocks and generator-scripts for each blocks -->
+    <script src="generators/javascript/flow.js"></script>
+    <script src="js/flow.js"></script>
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="blocklyDiv" style="height: 500px; width:500px;float:left;margin-right:50px;margin-top: 50px;"></div>
+
+    <xml id="toolbox" style="display:block">  
+            <block type="directions"></block>
+            <block type="directions-right"></block>
+            <block type="directions-left"></block>
+            <block type="directions-top"></block>
+            <block type="directions-down"></block>
+            <block type="end"></block>
+        </xml>
+
+        <button id="run" onclick="runJS()" style="float: right;">Run Code</button>
+        <button onclick="leftP()">LEFT</button>
+        <button onclick="rightP()">RIGHT</button>
+        <button onclick="topP()">TOP</button>
+        <button onclick="bottomP()">BOTTOM</button>
+
+        
+        <script type="text/javascript">
+        	
+        	function runJS() {
+              Blockly.JavaScript.addReservedWords('code');
+              var code = Blockly.JavaScript.workspaceToCode();
+              // alert(code);
+              try {
+                eval(code);
+              }
+              catch (e) {
+                //alert(e);
+              }
+            }
+            var workspace = Blockly.inject('blocklyDiv',
+            {toolbox: document.getElementById('toolbox')});
+        </script>
+
+    <!-- include the main game file -->
+    
+    <script type="text/javascript" src="js\main.js"></script>
+
+</body>
+
+</html>
