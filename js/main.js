@@ -25,6 +25,9 @@ function create ()
 {
     this.add.image(400, 300, 'sky');
     stars = this.add.sprite(700, 100, 'star');
+    stars1 = this.add.sprite(400, 400, 'star');
+    stars2 = this.add.sprite(200, 200, 'star');
+    stars3 = this.add.sprite(600, 300, 'star');
     player = this.add.sprite(100, 450, 'dude');
     cursors = this.input.keyboard.createCursorKeys();
 }
