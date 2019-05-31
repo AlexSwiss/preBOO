@@ -38,6 +38,7 @@ function preload ()
 
 function create ()
 {
+<<<<<<< HEAD
     this.add.image(400, 300, 'background');
     apple = this.physics.add.sprite(400, 350, 'apple');
     bag = this.physics.add.sprite(400, 150, 'bag');
@@ -49,6 +50,14 @@ function create ()
     yam = this.physics.add.sprite(300, 150, 'yam');
     leaf = this.physics.add.sprite(300, 250, 'leaf');
     player = this.physics.add.sprite(200, 350, 'dude');
+=======
+    this.add.image(400, 300, 'sky');
+    stars = this.add.sprite(700, 100, 'star');
+    stars1 = this.add.sprite(400, 400, 'star');
+    stars2 = this.add.sprite(200, 200, 'star');
+    stars3 = this.add.sprite(600, 300, 'star');
+    player = this.add.sprite(100, 450, 'dude');
+>>>>>>> 9f8f61719af6d0f9ad35f4acdfb4225863be5952
     cursors = this.input.keyboard.createCursorKeys();
     this.physics.add.overlap(player, apple, collectApple, null, this);
     this.physics.add.overlap(player, bag, collectBag, null, this);
