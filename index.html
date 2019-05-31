@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1
     maximum-scale=1, minimum-scale=1, user-scale=no" />
     <title>PreBoo Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/phaser@3.17.0/dist/phaser.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
      <!-- Blockly Script Default -->
      <script src="blockly_compressed.js"></script>
@@ -17,19 +23,33 @@
      <!-- Customize Blocks and generator-scripts for each blocks -->
     <script src="generators/javascript/flow.js"></script>
     <script src="js/flow.js"></script>
+    <script src="js/typed.js"></script>
 
-    <style>
-        body {
-            padding: 0px;
-            margin: 0px;
-            background: black;
-        }
-    </style>
+<style>
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #ff6f00;
+}
+</style>
+    
 </head>
 
 <body>
-
-    <div id="blocklyDiv" style="height: 500px; width:400px;float:left;margin-right:50px;margin-top: 50px;"></div>
+    <!--Navbar-->
+    <nav class="navbar" style="height:80px; background-color: #ff6f00">
+            <a class="navbar-brand" href="#">
+              <img src="./asset/images/logo.png" style="height:80px; width:100px" alt="preBoo">
+            </a>
+          </nav>
+      <!--/.Navbar-->
+    <div></div>
+    <div id="blocklyDiv" style="height: 500px; width:400px;float:left;margin-right:50px;margin-top: 30px;">
+        <div class="row">
+            <img src="./asset/images/sarah.png" style="height:150px; width:150px;"/>
+            <img src="./asset/images/dialogue.png" style="height:150px; width:260px;"/>
+        </div>
+    </div>
 
     <xml id="toolbox" style="display:block">  
             <block type="directions"></block>
@@ -40,11 +60,11 @@
             <block type="end"></block>
         </xml>
 
-        <button id="run" onclick="runJS()" style="float: right;">Run Code</button>
-        <button onclick="leftP()">LEFT</button>
+        <button type="button" class="btn btn-primary" id="run" onclick="runJS()">Run Code</button>
+        <!--<button onclick="leftP()">LEFT</button>
         <button onclick="rightP()">RIGHT</button>
         <button onclick="topP()">TOP</button>
-        <button onclick="bottomP()">BOTTOM</button>
+        <button onclick="bottomP()">BOTTOM</button>-->
 
         
         <script type="text/javascript">
